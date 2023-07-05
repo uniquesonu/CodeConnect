@@ -19,7 +19,7 @@ Check out the live demo of CodeConnect at [https://codeconnect-ecru.vercel.app](
 1. Clone this repository to your local machine.
 
 ```code
-(https://github.com/uniquesonu/CodeConnect.git)https://github.com/uniquesonu/CodeConnect.git
+https://github.com/uniquesonu/CodeConnect.git
 ```
 cd codeconnect
 
