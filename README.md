@@ -5,13 +5,10 @@ CodeConnect is a web-based collaborative coding platform that aims to bring deve
 ## Features
 
 - **Code Sharing:** Easily share your code projects with the community.
-- **Collaborative Coding:** Work together in real-time on coding projects with other developers.
 - **Code Review:** Request and provide code feedback to enhance code quality.
 - **Code Snippets:** Save and share small, reusable code snippets with the community.
-- **Version Control:** Integrate with Git for version management and team collaboration.
 - **Notes Making & Sharing:** Create and share notes related to coding, projects, or ideas.
 - **Code Challenges:** Participate in coding challenges and competitions to improve your skills.
-- **Social Networking:** Connect with fellow developers, follow their work, and build a professional network.
 
 ## Demo
 
