@@ -1,7 +1,5 @@
 # CodeConnect - Collaborative Coding Platform
 
-![CodeConnect Logo](https://example.com/path-to-logo.png) *(Replace with your logo URL)*
-
 CodeConnect is a web-based collaborative coding platform that aims to bring developers together to share, collaborate, and learn from each other's code. Whether you are a seasoned developer or just starting, CodeConnect provides a vibrant community to foster growth, creativity, and knowledge exchange.
 
 ## Features
@@ -26,6 +24,7 @@ Check out the live demo of CodeConnect at [https://codeconnect-ecru.vercel.app](
 ```code
 (https://github.com/uniquesonu/CodeConnect.git)https://github.com/uniquesonu/CodeConnect.git
 cd codeconnect
+```
 
 2. Install the required dependencies.
 ```code
