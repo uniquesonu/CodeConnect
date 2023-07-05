@@ -23,16 +23,18 @@ Check out the live demo of CodeConnect at [https://codeconnect-ecru.vercel.app](
 
 ```code
 (https://github.com/uniquesonu/CodeConnect.git)https://github.com/uniquesonu/CodeConnect.git
-cd codeconnect
 ```
+cd codeconnect
 
 2. Install the required dependencies.
 ```code
 npm install
+```
 
 3. Start the development server.
 ```code
 npm run dev
+```
 
 Welcome to CodeConnect, an open-source web application that allows developers to connect, collaborate, and code together in real-time! This platform is built using the following technologies:
 
