@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { account } from '../appwrite/appwriteConfig';
+import {FcGoogle} from 'react-icons/fc'
 
 function Auth({
   title, 
@@ -17,6 +18,14 @@ function Auth({
   setName
 }){
   const navigate = useNavigate();
+  const handleGoogle = async() =>{
+    account.createOAuth2Session(
+      'google',
+      "http://localhost:5173",
+      "http://localhost:5173/login"
+      );
+    
+  }
   useEffect(()=>{
     const user = account.get();
     user.then(()=>{
@@ -81,11 +90,14 @@ function Auth({
         </div>
         
         {button}
+        <span className='text-center'>or</span>
+        <button className='btn btn-neutral' onClick={handleGoogle}><span className='flex text-center items-center gap-2'><FcGoogle size={24}/> Login with Google</span></button>
         <span className='text-center'>
           {bottomQn}
           <br />
           <Link to={bottomLink} className='link'>{bottomLabel}</Link>
         </span>
+       
 
       </div>
     </div>
