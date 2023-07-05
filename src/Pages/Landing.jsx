@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {FaLaptopCode} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { account } from '../appwrite/appwriteConfig';
 
 function Landing() {
+  const navigate = useNavigate();
+  useEffect(()=>{
+    const user = account.get();
+    user.then(()=>{
+      navigate('/')
+    }).catch()
+  },[navigate])
   return (
     <>
       <div
@@ -17,7 +25,7 @@ function Landing() {
             <p>
             A Sharable Code Community for Developers Worldwide.
             </p>
-            <button className="btn btn-primary"><Link to='/'>Get Started</Link></button>
+            <Link to={"/signup"} className="btn btn-primary">Get Started</Link>
           </div>
         </div>
       </div>

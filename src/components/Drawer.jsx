@@ -1,8 +1,22 @@
 import React from 'react'
 import { MdLogout, MdMenu } from 'react-icons/md'
 import { FaPlus } from 'react-icons/fa'
+import { account } from '../appwrite/appwriteConfig'
+import { useNavigate } from 'react-router-dom'
 
 function Drawer({children}) {
+  const navigate = useNavigate();
+  const logout = () =>{
+    const user = account.get()
+    const promise = account.deleteSession('current')
+    promise.then(()=>{
+      navigate('/landing')
+    }
+    ).catch(err=>{
+      alert(err)
+    })
+    
+  }
   return (
     <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -49,7 +63,7 @@ function Drawer({children}) {
         </li>
 
         {/* logout button */}
-        <button className="btn btn-error mt-auto">
+        <button onClick={logout} className="btn btn-error mt-auto">
           <MdLogout size={24}/>
           <span>Logout</span>
         </button>
