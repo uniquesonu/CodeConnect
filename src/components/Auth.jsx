@@ -21,8 +21,8 @@ function Auth({
   const handleGoogle = async() =>{
     account.createOAuth2Session(
       'google',
-      "http://localhost:5173",
-      "http://localhost:5173/login"
+      "https://codeconnect-ecru.vercel.app",
+      "https://codeconnect-ecru.vercel.app/login"
       );
     
   }
