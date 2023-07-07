@@ -11,6 +11,11 @@ import Landing from './Pages/Landing.jsx';
 import Dashboard from './Pages/Dashboard.jsx';
 import Signup from './Pages/Signup.jsx';
 import Login from './Pages/Login.jsx';
+<<<<<<< HEAD
+=======
+import Create from './Pages/Create.jsx';
+import NotesPrev from './Pages/NotesPrev.jsx';
+>>>>>>> 5608d44 (data bases added)
 
 const router = createBrowserRouter([
   {
@@ -32,6 +37,17 @@ const router = createBrowserRouter([
       {
         path: "/login",
       element: <Login />
+<<<<<<< HEAD
+=======
+      },
+      {
+        path: "/create",
+        element: <Create />
+      },
+      {
+        path: ":id",
+        element: <NotesPrev />
+>>>>>>> 5608d44 (data bases added)
       }
     ]
   },
