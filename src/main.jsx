@@ -23,7 +23,6 @@ import Create from './pages/Create.jsx';
 import NotesPrev from './pages/NotesPrev.jsx';
 import Drawer from './components/Drawer.jsx';
 
-
 const router = createBrowserRouter([
   {
     path: "/",
