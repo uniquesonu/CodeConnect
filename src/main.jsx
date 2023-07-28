@@ -45,7 +45,6 @@ const router = createBrowserRouter([
         index: true,
         element: <Dashboard />
       },
-<<<<<<< HEAD
       {
         path: "/signup",
         element: <Signup />
@@ -53,12 +52,8 @@ const router = createBrowserRouter([
       {
         path: "/login",
       element: <Login />
-<<<<<<< HEAD
-=======
       },
-=======
       
->>>>>>> 2b2d96a (added loader)
       {
         path: "/create",
         element: <Create />
@@ -66,7 +61,7 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <NotesPrev />
->>>>>>> 5608d44 (data bases added)
+
       }
     ]
   },
