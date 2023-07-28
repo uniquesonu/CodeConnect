@@ -40,7 +40,7 @@ const NotesPrev = () => {
     })
   },[id,navigate])
   return (
-    <Drawer>
+    
         <div className="min-h-screen w-full flex flex-col p-4 py-16 lg:py-4 gap-4">
 
             <h1 className='text-3xl flex gap-2 items-end'><span>{notes.title}</span> 
@@ -63,7 +63,6 @@ const NotesPrev = () => {
                 <button onClick={deleteNotes} className="btn btn-error">Delete</button>
             </div>
         </div>
-    </Drawer>
   )
 }
 

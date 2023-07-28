@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import { MdLogout, MdMenu } from 'react-icons/md'
-import { FaPlus } from 'react-icons/fa'
-import { account } from '../appwrite/appwriteConfig'
-import { useNavigate } from 'react-router-dom'
-
-function Drawer({children}) {
-=======
 import React, { useEffect, useState } from 'react'
 import { MdLogout, MdMenu } from 'react-icons/md'
 import { FaPlus } from 'react-icons/fa'
@@ -16,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 function Drawer({children}) {
   const [notesTitle,setNotesTitle] = useState([])
->>>>>>> 5608d44 (data bases added)
   const navigate = useNavigate();
   const logout = () =>{
     const user = account.get()
@@ -25,29 +15,33 @@ function Drawer({children}) {
       navigate('/landing')
     }
     ).catch(err=>{
-<<<<<<< HEAD
-      alert(err)
-    })
-    
-  }
-=======
       alert(err);
     })
     
   }
 
-  useEffect(()=>{
-    const promise = database.listDocuments(
-      '64a6153ba681e8b32e3d',
-      '64a616860b18b3ad068f',
-      []
-    )
-    promise.then((res)=>{
+      const user = await getCurrUser();
+      const promise = database.listDocuments(
+        "64a6153ba681e8b32e3d",
+        "64a616860b18b3ad068f",
+        [Query.equal("owner", user)]
+      );
+      const res = await promise;
       setNotesTitle(res.documents);
-    }).catch(err=>{
-      alert(err)
-    })
-  },[])
+    } catch (error) {
+      alert(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchNotesData();
+  }, [navigate, fetchingData]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+  }, [selectedTheme]);
 
 >>>>>>> 5608d44 (data bases added)
   return (
@@ -64,48 +58,29 @@ function Drawer({children}) {
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 gap-4 h-full bg-base-200 text-base-content">
       {/* Create Button */}
-<<<<<<< HEAD
-        <button className="btn btn-primary">
-            <FaPlus size={18}/>
-            <span>Create</span>
-        </button>
-        <hr />
-
-      {/* Lists of data  */}
-        <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li>
-
-        <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li>
-
-        <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li>
-
-        <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li>
-
-        <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li>
-
-        <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li>
-=======
         <Link to={"/create"} className="btn btn-primary">
             <FaPlus size={18}/>
             <span>Create</span>
-        </Link>
-        <hr />
+          </Link>
+          <hr />
 
-      {/* Lists of data  */}
-        {/* <li className='bg-base-100 rounded-lg'>
-            <a>index.html</a>
-        </li> */}
+          {/* Lists of data */}
+          <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-4">
+            {loading ? (
+              <div className="flex self-center">Loading...</div>
+            ) : (
+              notesTitle.map((title) => (
+                <li key={title.$id} className="bg-base-100 rounded-lg">
+                  <Link to={"/" + title.$id}>{title.title}</Link>
+                </li>
+              ))
+            )}
+          </div>
+          <div className="mt-auto">
+            <div className="form-control block">
+              <label htmlFor="theme" className="block font-bold mb-2">
+                Select Theme:
+              </label>
 
         {
           notesTitle.map((title)=>{
@@ -117,7 +92,6 @@ function Drawer({children}) {
             )
           })
         }
->>>>>>> 5608d44 (data bases added)
 
         {/* logout button */}
         <button onClick={logout} className="btn btn-error mt-auto">
@@ -131,4 +105,4 @@ function Drawer({children}) {
   )
 }
 
-export default Drawer
+export default Drawer;

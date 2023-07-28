@@ -34,14 +34,16 @@ const addNotesToDB = async(notesData) => {
     if(!user){
         return null;
     }
+    console.log(user)
     const promise = database.createDocument(
         '64a6153ba681e8b32e3d',
         '64a616860b18b3ad068f',
         ID.unique(),
         {
+            owner: user,
             ...notesData,
-            users: {id: user.$id}
         }
+        
     )
     const result = promise.then((response)=>{
         return response;
@@ -52,5 +54,9 @@ const addNotesToDB = async(notesData) => {
 }
 
 
+<<<<<<< HEAD
 export {client, account, database, addNotesToDB}
 >>>>>>> 5608d44 (data bases added)
+=======
+export {client, account, database, addNotesToDB, getCurrUser}
+>>>>>>> 2b2d96a (added loader)
