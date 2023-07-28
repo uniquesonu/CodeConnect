@@ -14,14 +14,7 @@ import Login from './Pages/Login.jsx';
 
 import Create from './Pages/Create.jsx';
 import NotesPrev from './Pages/NotesPrev.jsx';
-
-import Landing from './pages/Landing.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import Signup from './pages/Signup.jsx';
-import Login from './pages/Login.jsx';
-import Create from './pages/Create.jsx';
-// import NotesPrev from './pages/NotesPrev.jsx';
-// import Drawer from './components/Drawer.jsx';
+import Drawer from './components/Drawer.jsx';
 
 const router = createBrowserRouter([
   {
