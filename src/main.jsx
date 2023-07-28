@@ -20,8 +20,8 @@ import Dashboard from './pages/Dashboard.jsx';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import Create from './pages/Create.jsx';
-import NotesPrev from './pages/NotesPrev.jsx';
-import Drawer from './components/Drawer.jsx';
+// import NotesPrev from './pages/NotesPrev.jsx';
+// import Drawer from './components/Drawer.jsx';
 
 const router = createBrowserRouter([
   {
