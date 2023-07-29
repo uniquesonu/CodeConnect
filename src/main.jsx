@@ -7,14 +7,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Landing from './Pages/Landing.jsx';
-import Dashboard from './Pages/Dashboard.jsx';
-import Signup from './Pages/Signup.jsx';
-import Login from './Pages/Login.jsx';
+import Landing from './pages/Landing';
+import Dashboard from './pages/Dashboard';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
-import Create from './Pages/Create.jsx';
-import NotesPrev from './Pages/NotesPrev.jsx';
-import Drawer from './components/Drawer.jsx';
+import Create from './pages/Create';
+import NotesPrev from './pages/NotesPrev';
+import Drawer from './components/Drawer';
 
 const router = createBrowserRouter([
   {

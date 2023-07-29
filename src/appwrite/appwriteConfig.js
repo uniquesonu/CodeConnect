@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Account, Client } from "appwrite";
-=======
 import { Account, Client, Databases, ID } from "appwrite";
->>>>>>> 5608d44 (data bases added)
 
 const client = new Client();
 
@@ -11,11 +7,9 @@ client
     .setProject('64a2d0325e1464341afd');
 
 const account = new Account(client)
-<<<<<<< HEAD
 
 
-export {client, account}
-=======
+
 const database = new Databases(client)
 
 const getCurrUser = async() => {
@@ -53,10 +47,4 @@ const addNotesToDB = async(notesData) => {
     return result;
 }
 
-
-<<<<<<< HEAD
-export {client, account, database, addNotesToDB}
->>>>>>> 5608d44 (data bases added)
-=======
 export {client, account, database, addNotesToDB, getCurrUser}
->>>>>>> 2b2d96a (added loader)
