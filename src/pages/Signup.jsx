@@ -12,7 +12,7 @@ const SingupBtn = ({onClick}) =>{
 
 
 
-function Signup() {
+export default function Signup() {
   const [email,setEmail] = useState("")
   const [name,setName] = useState("")
   const [password,setPassword] = useState("")
@@ -51,5 +51,3 @@ function Signup() {
     />
   )
 }
-
-export default Signup

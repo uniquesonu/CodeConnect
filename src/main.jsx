@@ -18,7 +18,7 @@ import Drawer from './components/Drawer';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/landing",
     element: <Landing />
   },
   {

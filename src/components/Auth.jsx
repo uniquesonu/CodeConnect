@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { account } from '../appwrite/appwriteConfig';
 import {FcGoogle} from 'react-icons/fc'
 
-function Auth({
+export default function Auth({
   title, 
   description, 
   button,
