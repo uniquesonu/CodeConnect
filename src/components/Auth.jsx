@@ -22,11 +22,11 @@ export default function Auth({
     account.createOAuth2Session(
       'google',
 
-      // "https://codeconnect-ecru.vercel.app",
-      // "https://codeconnect-ecru.vercel.app/login"
+      "https://codeconnect-ecru.vercel.app",
+      "https://codeconnect-ecru.vercel.app/login"
 
-      "http://localhost:5173",
-      "http://localhost:5173/login"
+      // "http://localhost:5173",
+      // "http://localhost:5173/login"
 
     );
     
