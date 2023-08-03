@@ -5,7 +5,7 @@ import { account, database, getCurrUser } from "../appwrite/appwriteConfig";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Query } from "appwrite";
-import "../App.css"
+import "../App.css";
 
 const themes = [
   "light",
@@ -47,7 +47,7 @@ function Drawer({ children }) {
   const [notesTitle, setNotesTitle] = useState([]);
   const [fetchingData, setFetchingData] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState("dark");
-  const [loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const logout = () => {
@@ -63,7 +63,7 @@ function Drawer({ children }) {
 
   const fetchNotesData = async () => {
     try {
-      setLoading(true)
+      setLoading(true);
       const user = await getCurrUser();
       const promise = database.listDocuments(
         "64a6153ba681e8b32e3d",
@@ -76,7 +76,7 @@ function Drawer({ children }) {
       alert(error);
     } finally {
       setFetchingData(false);
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -90,8 +90,7 @@ function Drawer({ children }) {
   }, [selectedTheme]);
 
   return (
-    
-<div className="drawer lg:drawer-open">
+    <div className="drawer sticky left-0 lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         <Outlet context={[setFetchingData]} />

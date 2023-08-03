@@ -1,40 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Drawer from '../components/Drawer'
 import MDEditor from '@uiw/react-md-editor';
 import { addNotesToDB } from '../appwrite/appwriteConfig';
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
 
-const Create = () => {
+const Edit = () => {
+    const { id } = useParams();
     const [notes, setNotes] = useState("");
     const [title, setTitle] = useState("")
     const [loading, setLoading] = useState(false)
-    const [setFetchingData] = useOutletContext();
     const navigate = useNavigate();
-    const createNotes = async(e) => {
+    const EditNotes = async(e) => {
         e.preventDefault();
         setLoading(true)
-        const response = await addNotesToDB({
-            title: title,
-            codeconnect: notes,
-
-        });
-        if(!response){
-            alert(
-                "Unable to create document. please try again or try logging again"
-            );
-            setLoading(false);
-            return;
-        }
+        
         setLoading(false)
-        setFetchingData(true)
-        navigate("/")
+        navigate("/+id")
         
     };
+    useEffect(()=>{
+
+    },[id])
 
   return (
     
-        <form onSubmit={createNotes} className="min-h-screen w-full flex flex-col p-4 py-16 lg:py-4 gap-4">
-            <h1 className="text-3xl">Create your Code/Notes</h1>
+        <form onSubmit={EditNotes} className="min-h-screen w-full flex flex-col p-4 py-16 lg:py-4 gap-4">
+            <h1 className="text-3xl">Edit your Code/Notes</h1>
             <div className="form-control gap-2">
                 <label htmlFor="title">Title*</label>
                 <input 
@@ -56,6 +47,7 @@ const Create = () => {
                             height={450}
                             visibleDragbar={false}
                             id='code-connect'
+                            
                             />
                 </div>
             <div className="grid grid-cols-2 max-w-xs gap-4">
@@ -68,4 +60,4 @@ const Create = () => {
   )
 }
 
-export default Create
+export default Edit

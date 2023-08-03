@@ -59,7 +59,7 @@ const NotesPrev = () => {
         {user && ( // Show the "Copy Link" button only when the user is logged in
           <button
             onClick={() => {
-              navigator.clipboard.writeText('http://localhost:5173/preview/'+id);
+              navigator.clipboard.writeText(window.location.href);
               alert("Link copied to your clipboard");
             }}
             className="btn btn-ghost rounded-full btn-sm"

@@ -15,6 +15,8 @@ import Login from './pages/Login';
 import Create from './pages/Create';
 import NotesPrev from './pages/NotesPrev';
 import Drawer from './components/Drawer';
+import Edit from './pages/Edit';
+import Preview from './pages/Preview'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
   element: <Login />
+  },
+  {
+    path: "/preview/:id",
+    element: <Preview />
   },
   {
     path: "/",
@@ -54,6 +60,10 @@ const router = createBrowserRouter([
         path: ":id",
         element: <NotesPrev />
 
+      },
+      {
+        path: "edit/:id",
+        element: <Edit/>
       }
     ]
   },
