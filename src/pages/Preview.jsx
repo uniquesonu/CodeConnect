@@ -85,7 +85,7 @@ const NotesPrev = () => {
         </div>
       )} */}
 {/*       create your own notes button */}
-  <button className="btn btn-warning" onClick={()=>navigate("/")}>Create your own notes</button>
+  <button className="btn btn-warning w-fit" onClick={()=>navigate("/")}>Create your own notes</button>
     </div>
   );
 };
