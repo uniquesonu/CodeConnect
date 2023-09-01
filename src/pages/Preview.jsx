@@ -74,7 +74,7 @@ const NotesPrev = () => {
           style={{ background: "transparent", fontSize: "24px" }}
         />
       </div>
-      {user && ( // Show the "Edit" and "Delete" buttons only when the user is logged in
+{/*       {user && ( // Show the "Edit" and "Delete" buttons only when the user is logged in
         <div className="grid grid-cols-2 max-w-xs gap-4">
           <Link to={"/edit/" + id} className={`btn btn-warning`}>
             Edit
@@ -83,7 +83,7 @@ const NotesPrev = () => {
             Delete
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
