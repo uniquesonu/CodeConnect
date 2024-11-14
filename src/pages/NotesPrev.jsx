@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Drawer from "../components/Drawer";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { database, getCurrUser } from "../appwrite/appwriteConfig";
 import MDEditor from "@uiw/react-md-editor";
@@ -7,7 +6,7 @@ import { FaLink } from "react-icons/fa";
 
 const NotesPrev = () => {
   const [notes, setNotes] = useState({});
-  const [user,setUser] = useState(null)
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -44,7 +43,7 @@ const NotesPrev = () => {
         navigate("/");
       });
 
-      getCurrUser()
+    getCurrUser()
       .then((userId) => {
         setUser(userId);
       })
@@ -59,7 +58,9 @@ const NotesPrev = () => {
         {user && ( // Show the "Copy Link" button only when the user is logged in
           <button
             onClick={() => {
-              navigator.clipboard.writeText('https://codeconnect-ecru.vercel.app/preview/'+id);
+              navigator.clipboard.writeText(
+                "http://localhost:5173/preview/" + id
+              );
               alert("Link copied to your clipboard");
             }}
             className="btn btn-ghost rounded-full btn-sm"

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { account } from '../appwrite/appwriteConfig';
 import {FcGoogle} from 'react-icons/fc'
+import PropTypes from 'prop-types'
 
 export default function Auth({
   title, 
@@ -22,11 +23,11 @@ export default function Auth({
     account.createOAuth2Session(
       'google',
 
-      "https://codeconnect-ecru.vercel.app",
-      "https://codeconnect-ecru.vercel.app/login"
+      // "https://codeconnect-ecru.vercel.app",
+      // "https://codeconnect-ecru.vercel.app/login"
 
-      // "http://localhost:5173",
-      // "http://localhost:5173/login"
+      "http://localhost:5173",
+      "http://localhost:5173/login"
 
     );
     
@@ -109,4 +110,19 @@ export default function Auth({
   </div>
 </div>
   )
+}
+
+Auth.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  button: PropTypes.node.isRequired,
+  bottomQn: PropTypes.string.isRequired,
+  bottomLabel: PropTypes.string.isRequired,
+  bottomLink: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  setEmail: PropTypes.func.isRequired,
+  setPassword: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  setName: PropTypes.func
 }

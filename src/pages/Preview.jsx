@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Drawer from "../components/Drawer";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {  useNavigate, useParams } from "react-router-dom";
 import { database, getCurrUser } from "../appwrite/appwriteConfig";
 import MDEditor from "@uiw/react-md-editor";
 import { FaLink } from "react-icons/fa";
 
 const NotesPrev = () => {
   const [notes, setNotes] = useState({});
-  const [user,setUser] = useState(null)
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
 
   const deleteNotes = () => {
-    const isConfirm = confirm("Are you sure do you want to delete?");
+    const isConfirm = window.confirm("Are you sure you want to delete?");
     if (!isConfirm) return;
     const promise = database.deleteDocument(
       "64a6153ba681e8b32e3d",
@@ -44,7 +43,7 @@ const NotesPrev = () => {
         navigate("/");
       });
 
-      getCurrUser()
+    getCurrUser()
       .then((userId) => {
         setUser(userId);
       })
@@ -74,7 +73,7 @@ const NotesPrev = () => {
           style={{ background: "transparent", fontSize: "24px" }}
         />
       </div>
-{/*       {user && ( // Show the "Edit" and "Delete" buttons only when the user is logged in
+      {/*       {user && ( // Show the "Edit" and "Delete" buttons only when the user is logged in
         <div className="grid grid-cols-2 max-w-xs gap-4">
           <Link to={"/edit/" + id} className={`btn btn-warning`}>
             Edit
@@ -84,8 +83,10 @@ const NotesPrev = () => {
           </button>
         </div>
       )} */}
-{/*       create your own notes button */}
-  <button className="btn btn-warning w-fit" onClick={()=>navigate("/")}>Create your own notes</button>
+      {/*       create your own notes button */}
+      <button className="btn btn-warning w-fit" onClick={() => navigate("/")}>
+        Create your own notes
+      </button>
     </div>
   );
 };
